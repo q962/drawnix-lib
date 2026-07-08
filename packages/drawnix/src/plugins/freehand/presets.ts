@@ -6,7 +6,7 @@ export const MIN_FREEHAND_STROKE_WIDTH = 1;
 
 // Covers roughly 2x PPI displays (for example, 2K/16-inch) without changing
 // the default fine stroke.
-export const MAX_FREEHAND_STROKE_WIDTH = 24;
+export const MAX_FREEHAND_STROKE_WIDTH = 100;
 
 export const FREEHAND_STROKE_WIDTH_STEP = 0.25;
 

@@ -35,7 +35,7 @@ import {
   DrawnixToolState,
   useDrawnix,
 } from '../../hooks/use-drawnix';
-import { ExtraToolsButton } from './extra-tools/extra-tools-button';
+// import { ExtraToolsButton } from './extra-tools/extra-tools-button';
 import { addImage } from '../../utils/image';
 import { Translations, useI18n } from '../../i18n';
 import { FREEHANDS } from '../../constants/freehand';
@@ -102,11 +102,11 @@ export const BUTTONS: AppToolButtonProps[] = [
     titleKey: 'toolbar.image',
     key: 'image',
   },
-  {
-    icon: ExtraToolsIcon,
-    titleKey: 'toolbar.extraTools',
-    key: 'extra-tools',
-  },
+  // {
+  //   icon: ExtraToolsIcon,
+  //   titleKey: 'toolbar.extraTools',
+  //   key: 'extra-tools',
+  // },
 ];
 
 // TODO provider by plait/draw
@@ -393,9 +393,9 @@ export const CreationToolbar = () => {
               </Popover>
             );
           }
-          if (button.key === 'extra-tools') {
-            return <ExtraToolsButton key={index}></ExtraToolsButton>;
-          }
+          // if (button.key === 'extra-tools') {
+          //   return <ExtraToolsButton key={index}></ExtraToolsButton>;
+          // }
           return (
             <ToolButton
               key={index}

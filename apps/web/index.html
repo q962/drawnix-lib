@@ -74,6 +74,10 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module">
+      import { create } from "./src/index";
+
+      create(document.getElementById("root"));
+    </script>
   </body>
 </html>

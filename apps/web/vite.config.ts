@@ -24,12 +24,41 @@ export default defineConfig({
   //  plugins: [ nxViteTsPaths() ],
   // },
 
+  define: {
+    'process.env.NODE_ENV': JSON.stringify('production')
+  },
+
   build: {
     outDir: '../../dist/apps/web',
     emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
+    },
+
+    // Prevent \UXXXX to be converted to Unicode characters in the output
+    minify: 'terser',
+    terserOptions: {
+      format: {
+        ascii_only: true,
+      },
+    },
+    lib: {
+      // Could also be a dictionary or array of multiple entry points.
+      entry: 'src/index.ts',
+      name: 'drawnix',
+      fileName: 'drawnix',
+      // Change this to the formats you want to support.
+      // Don't forget to update your package.json as well.
+      formats: ['iife'],
+    },
+
+    rollupOptions: {
+      // External packages that should not be bundled into your library.
+      external: [
+        '@plait-board/mermaid-to-drawnix',
+        '@plait-board/markdown-to-drawnix',
+      ]
     },
   },
 
